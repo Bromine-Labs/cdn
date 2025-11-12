@@ -1,4 +1,9 @@
-importScripts("/workerware/WWError.js");
+class WWError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "[WorkerWare Exception]";
+  }
+}
 const dbg = console.log.bind(console, "[WorkerWare]");
 const time = console.time.bind(console, "[WorkerWare]");
 const timeEnd = console.timeEnd.bind(console, "[WorkerWare]");
